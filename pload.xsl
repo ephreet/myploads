@@ -9,11 +9,9 @@ $dirs = array();
 $dir = dir($path);
 
 while (false !== ($entry = $dir->read())) {
-    if ($entry != '.' || $entry != '..') {
        if (is_dir($path . '/' .$entry)) {
             $dirs[] = $entry; 
        }
-    }
 }
 
 echo "<pre>"; print_r($dirs); exit;
