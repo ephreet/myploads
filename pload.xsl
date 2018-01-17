@@ -1,9 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE dtd_sample[<!ENTITY ext_file SYSTEM "./">]>
+
 <html xsl:version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:php="http://php.net/xsl">
 <body style="font-family:Arial;font-size:12pt;background-color:#EEEEEE">
-<xsl:for-each select="beers/beer">
-LOOOK:  &ext_file;
+===========================================
+  <xsl:for-each select="for $filename in collection(concat($directory, select='*.*')) return $filename " >
+            <gmd:name>
+                <gco:CharacterString>
+                    <xsl:value-of select= "base-uri(.)" />
+                </gco:CharacterString>
+            </gmd:name>
+</xsl:for-each>
+===========================================
+  <xsl:for-each select="beers/beer">
   <div style="background-color:teal;color:white;padding:4px">
     <span style="font-weight:bold"><xsl:value-of select="name"/> - </span>
     <xsl:value-of select="price"/>
