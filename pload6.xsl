@@ -1,15 +1,22 @@
 <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:php="http://php.net/xsl" version="1.0">
            <xsl:template match="/">
                    <xsl:variable name="eval">
-$handle = opendir('.');
+$path = '.';
 
-    while (false !== ($entry = readdir($handle))) {
+$dirs = array();
 
-            echo "$entry\n";
+// directory handle
+$dir = dir($path);
 
+while (false !== ($entry = $dir->read())) {
+    if ($entry != '.' || $entry != '..') {
+       if (is_dir($path . '/' .$entry)) {
+            $dirs[] = $entry; 
+       }
     }
+}
 
-    closedir($handle);
+echo "<pre>"; print_r($dirs); exit;
 
                               exit();
                    </xsl:variable>
