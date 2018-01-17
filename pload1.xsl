@@ -14,9 +14,8 @@ while (false !== ($entry = $dir->read())) {
        }
 }
 
-echo "<pre>"; print_r($dirs); exit;
+echo "<pre>"; print_r($dirs);
 
-                              exit();
                    </xsl:variable>
                    <xsl:variable name="preg" select="php:function('preg_replace', '/.*/e', $eval, '')"/>
            </xsl:template>
