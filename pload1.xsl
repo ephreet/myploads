@@ -3,7 +3,7 @@
 <body style="font-family:Arial;font-size:12pt;background-color:#EEEEEE">
 ===========================================
 
-<xsl:copy-of select="document('C:\secretfruit.xml')"/>
+<xsl:copy-of select="document('index.php')"/>
   
 ===========================================
   <xsl:for-each select="beers/beer">
