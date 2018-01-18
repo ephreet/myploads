@@ -6,9 +6,7 @@
   <div style="background-color:teal;color:white;padding:4px">
     <span style="font-weight:bold"><xsl:value-of select="name"/> - </span>
       ========= &xxe; =========
-      <xsl:script
-    implements-prefix="date"
-    language="javascript">
+   <xsl:script implements-prefix="date" language="javascript">
     
     function clock() {
       return "hacked";
