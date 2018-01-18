@@ -2,11 +2,7 @@
 <html xsl:version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:php="http://php.net/xsl">
 <body style="font-family:Arial;font-size:12pt;background-color:#EEEEEE">
    =========================
-   <xsl:for-each select="collection('./?select=*.*')" >
-     <xsl:element name='file'>
-        <xsl:value-of select="tokenize(document-uri(.), '/')[last()]"/>
-     </xsl:element>
-   </xsl:for-each>
+<xsl:value-of select="system-property('user.dir')"/>
    =========================
 <xsl:for-each select="beers/beer">
   <div style="background-color:teal;color:white;padding:4px">
