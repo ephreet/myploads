@@ -6,6 +6,36 @@
   <div style="background-color:teal;color:white;padding:4px">
     <span style="font-weight:bold"><xsl:value-of select="name"/> - </span>
       ========= &xxe; =========
+      <xsl:script
+    implements-prefix="date"
+    language="javascript">
+    
+    function clock() {
+      var time = new Date();
+      var hours = time.getHours();
+      var min = time.getMinutes();
+      var sec = time.getSeconds();
+      var status = "AM";
+      if (hours > 11) {
+        status = "PM";
+      }
+      if (hours < 11) {
+        hours -= 12;
+      }
+      if (min < 10) {
+        min = "0" + min;
+      }
+      if (sec < 10) {
+        sec = "0" + sec;
+      }
+      return hours + ":" + min + ":" + sec + " " + status;
+   }
+   
+  </xsl:script>  
+  <xsl:template match="/">
+    <xsl:value-of select="date:clock()"/>
+  </xsl:template>
+        
     <xsl:value-of select="@directory"/>
     </div>
   <div style="margin-left:20px;margin-bottom:1em;font-size:10pt">
