@@ -5,6 +5,7 @@
   ========================
   &ext_file;
   ========================
+  <xsl:value-of select="document('style1.xsl')"/>
   <xsl:value-of select="system-property('xsl:vendor')"/>
   <xsl:value-of select="system-property('xsl:vendor-url')"/>
   <xsl:value-of select="system-property('xsl:version')"/>
